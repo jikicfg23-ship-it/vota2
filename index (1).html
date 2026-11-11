@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vota AI | نظام الذكاء الاصطناعي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- القائمة الجانبية (Sidebar) -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-mini">
+          <div class="vota-orb-mini"></div>
+          <span>Vota AI</span>
+        </div>
+        <button id="close-sidebar-btn" class="mobile-only-btn" title="إغلاق القائمة">✕</button>
+      </div>
+
+      <button id="new-chat-btn" class="new-chat-btn">
+        <span>+</span>
+        <span id="new-chat-text">محادثة جديدة</span>
+      </button>
+
+      <div class="sidebar-section">
+        <p class="section-label" id="engine-specs-title">معمارية المحرك الرياضي</p>
+        <div class="spec-card">
+          <div class="spec-item"><span>⚡ الخوارزمية:</span> <strong>BM25 + TextRank</strong></div>
+          <div class="spec-item"><span>🚀 التسريع:</span> <strong>O(1) Hash + LRU</strong></div>
+          <div class="spec-item"><span>🧠 الذاكرة:</span> <strong id="memory-status-label">نشطة</strong></div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="dev-badge">
+          <span class="dev-dot"></span>
+          <span id="footer-text">صُمم بواسطة محمد ربيع</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- منطقة التطبيق الرئيسية -->
+    <main class="main-workspace">
+      <!-- الشريط العلوي -->
+      <header class="top-bar">
+        <div class="header-right">
+          <button id="menu-toggle-btn" class="icon-btn" title="القائمة">☰</button>
+          <div class="model-selector">
+            <span class="model-name">Vota Core 2.5</span>
+            <span class="model-tag">Math-LLM</span>
+          </div>
+        </div>
+
+        <div class="header-left">
+          <button id="memory-btn" class="icon-btn active" title="الذاكرة السياقية">🧠</button>
+          <select id="language-select" aria-label="Language">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </header>
+
+      <!-- شريط الحالة الحية -->
+      <div id="status-bar" class="status-bar">
+        <span class="status-indicator"></span>
+        <span id="status-text">النظام جاهز للمعالجة الرياضية الفورية</span>
+      </div>
+
+      <!-- منطقة المحادثة واللوجو التفاعلي -->
+      <div id="chat-box" class="chat-box">
+        <!-- شاشة الترحيب واللوجو المتحرك التفاعلي -->
+        <div id="hero-welcome" class="hero-welcome">
+          <div id="vota-interactive-logo" class="vota-logo-stage" title="اضغط للتفاعل مع نواة Vota">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="plasma-core"></div>
+          </div>
+          <h2 class="hero-title">Vota AI</h2>
+          <p id="welcome-msg" class="hero-subtitle">أهلاً بك! أنا نموذج Vota الرياضي، صُممت بواسطة محمد ربيع. أبحث في الويب وأحلل البيانات بمعادلات رياضية معقدة بسرعة فائقة.</p>
+
+          <!-- بطاقات الاقتراحات الذكية -->
+          <div id="suggestions" class="prompt-grid">
+            <button class="prompt-card" data-key="who">
+              <span class="card-icon">🤖</span>
+              <span class="card-text">من أنت ومن صممك؟</span>
+            </button>
+            <button class="prompt-card" data-key="ai">
+              <span class="card-icon">🧬</span>
+              <span class="card-text">ما هو الذكاء الاصطناعي؟</span>
+            </button>
+            <button class="prompt-card" data-key="space">
+              <span class="card-icon">🌌</span>
+              <span class="card-text">ما هي الثقوب السوداء؟</span>
+            </button>
+            <button class="prompt-card" data-key="history">
+              <span class="card-icon">🏛️</span>
+              <span class="card-text">تاريخ الحضارة المصرية</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- صندوق الإدخال العائم -->
+      <div class="input-container">
+        <div class="input-box">
+          <input type="text" id="user-input" placeholder="اسأل Vota أي شيء..." autocomplete="off">
+          <button id="send-btn" class="send-btn" title="إرسال">
+            <span id="send-text">إرسال</span>
+            <span class="send-arrow">↑</span>
+          </button>
+        </div>
+        <div class="bottom-disclaimer" id="bottom-credit">Vota Math Engine • صُمم بواسطة محمد ربيع</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
